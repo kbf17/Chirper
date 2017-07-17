@@ -39,6 +39,7 @@ app.route('/api/chirps')
                         res.status(500);
                     } else {
                         res.sendStatus(201);
+                        res.send(chirp);
                     }
                 });
             }
