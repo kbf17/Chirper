@@ -1,3 +1,13 @@
-<div ng-controller="SingleController as single">
+<div>
+    <h3> You made it</h3>
+
+<div class = "col-lg-4" ng-controller="SingleController">
+    <div class = "center col-lg-4 list-container">
+        <p>User: {{ chirp.user }}</p>
+        <p>Chirp: {{ chirp.message }}</p>
+        <button>Delete</button>
+        {{ chirp.id }}
+    </div>
+</div>
 
 </div>

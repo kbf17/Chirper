@@ -8,8 +8,9 @@
         <div class = "center col-lg-4 list-container" ng-repeat="chirp in chirpList">
             <p>User: {{ chirp.user }}</p>
             <p>Chirp: {{ chirp.message }}</p>
-            <button href="#/single" id = {{chirp.id}}>View</button>
+            <button ng-click="ClickMe(chirp.id)" id = {{chirp.id}}>View</button>
             {{ chirp.id}}
+            <button ng-click="DeleteChirp">Delete</button>
         </div>
     </div>
 </div>

@@ -8,34 +8,39 @@
         })
         .when("/list", {
             templateUrl : "../views/list.html",
-            controller: "ChirpsController"
+            // controller: "ChirpsController"
         })
-        .when("/single", {
-            templateUrl : "../views/single.html",
+        .when("/single/:id", {
+            templateUrl: '../views/single.html',
+            // controller: SingleController
 
         })
     });
 
 
-    app.controller('ChirpsController', function($scope, $http) {
+    app.controller('ChirpsController', function($scope, $http, $location) {
         $http.get("http://localhost:3000/api/chirps")
         .then(function(response){
             $scope.chirpList = response.data;
             console.log('found');
             console.log($scope.chirpList);   
         })
-        // .error(function(response){
-        //     confirm("Uh oh! Cheeps not found!" + "Refresh stream?");
-        // })
+        $scope.ClickMe = function(id){
+            $location.path('/single/' + id)
+        }
     });
 
-    app.controller('SingleController', function($scope, $http){
-        $http.get("http://localhost:3000/api/chirps/:" + id)
-        .then(function(response){
-            $scope.singleChirp = response.data;
-            console.log('single');
-        })
-    })
+    app.controller('SingleController', ['$scope', '$routeParams', function($scope, $routeParams, $http){
+        console.log($routeParams.id);
+        console.log($routeParams);
+        id = $routeParams.id;
+        
+     var url = "http://localhost:3000/api/chirps/"
+        $http.get(url+id);
+        // .then(function(response){
+        //     console.log('single');
+        // })
+    }])
 
     app.controller('PushController', function($scope, $http){
         $scope.SendChirp = function(){
@@ -49,6 +54,16 @@
             });
         }
     });
+
+    app.controller('DeleteController', function($scope, $http){
+        var id = $scope.id;
+        $scope.DeleteChirp = function(){
+            $http.delete("http://localhost:3000/api/chirps/:" +id)
+            .then(function(){
+                console.log('yep');
+            })
+        }
+    })
 
 
 
