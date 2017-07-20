@@ -8,11 +8,9 @@
         })
         .when("/list", {
             templateUrl : "../views/list.html",
-            // controller: "ChirpsController"
         })
         .when("/single/:id", {
             templateUrl: '../views/single.html',
-            // controller: SingleController
 
         })
     });
@@ -22,24 +20,41 @@
         $http.get("http://localhost:3000/api/chirps")
         .then(function(response){
             $scope.chirpList = response.data;
-            console.log('found');
-            console.log($scope.chirpList);   
+            console.log('success');   
+            console.log(response);
         })
+        .catch(function(error){
+            alert('Uh oh, no chirps here!')
+        });
         $scope.ClickMe = function(id){
             $location.path('/single/' + id)
-        }
+        };
+        $scope.DeleteChirp = function(id){
+            console.log('click');
+            var url = "http://localhost:3000/api/chirps/";
+             var data = $.param({
+                name: $scope.name,
+                message: $scope.message,
+                id: $scope.id
+            });
+            if(confirm('Do you really want to do that?') == true) {
+                $http.delete(url + id, JSON.stringify(data)).then(function (response){
+                    console.log(response);
+                });
+            } else {
+                alert('Good choice!');
+            }
+    }
     });
 
-    app.controller('SingleController', ['$scope', '$routeParams', function($scope, $routeParams, $http){
-        console.log($routeParams.id);
-        console.log($routeParams);
-        id = $routeParams.id;
-        
+    app.controller('SingleController', ['$scope', '$routeParams', '$http', function($scope, $routeParams, $http){
+    id = $routeParams.id;    
      var url = "http://localhost:3000/api/chirps/"
-        $http.get(url+id);
-        // .then(function(response){
-        //     console.log('single');
-        // })
+        $http.get(url+id)
+        .then(function(response){
+            $scope.chirps = response.data;
+            console.log('single loaded');
+        })
     }])
 
     app.controller('PushController', function($scope, $http){
@@ -51,20 +66,9 @@
             $http.post("http://localhost:3000/api/chirps", data)
             .then(function(response){
                 console.log(response);
+                alert('Chirp sent!');
             });
         }
     });
-
-    app.controller('DeleteController', function($scope, $http){
-        var id = $scope.id;
-        $scope.DeleteChirp = function(){
-            $http.delete("http://localhost:3000/api/chirps/:" +id)
-            .then(function(){
-                console.log('yep');
-            })
-        }
-    })
-
-
 
 

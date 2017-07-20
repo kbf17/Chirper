@@ -1,11 +1,53 @@
+body{
+    background-color: #eaebed;
+}
+
+.navbar {
+    background-image: url('http://stockpictures.io/wp-content/uploads/2016/06/5695-birds-animals-flourish-swirls-swoosh-flowers-floral-decorative-ornamental-silhouette-svg-vector-free-vector-graphics-free-illustrations-free-images-royalty-free-768x389.png');
+    background-color: #9DF8FF;
+    font-size: 18px;
+}
+
 #chirpWidget {
     height: 135px;
     width: 400px;
+    text-align: right;
+    float: right;
 }
 
 #chirpForm {
     height: 175px;
     width: inherit;
+    border: 2px solid #acf7c1;
+    background-color: #acf7c1;
+}
+
+.primary-text {
+    font-family: 'Indie Flower', cursive;
+}
+.secondary-text {
+    font-family: 'Raleway', sans-serif;
+}
+/*Home Page  */
+.landing{
+    background-image: url("https://images5.alphacoders.com/308/308020.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    opacity: 0.5;
+    height: 500px;
+    width: 100%;
+}
+.landing-text{
+    display: inline-flex;
+    float: right;
+    color: black;
+    opacity: 1;
+    
+}
+
+.delete{
+    float: right;
 }
 
 .center {
@@ -18,14 +60,30 @@
 }
 
 .list-container {
-    border: 2px solid lightblue;
-    background-color: lightblue;
+    border: 2px solid #acf7c1;
+    background-color: #acf7c1;
     border-radius: 12px;
     margin-bottom: 10px;
     padding: 10px;
 }
 
+.inner-container {
+    border-radius: 12px;
+    margin: 4px;
+    background-color: whitesmoke;
+}
+
 #list-heading {
     height: 6em;
     width: 20em;
+}
+
+.box-shadow{
+-webkit-box-shadow: 33px 26px 40px 0px rgba(133,124,141,1);
+-moz-box-shadow: 33px 26px 40px 0px rgba(133,124,141,1);
+box-shadow: 33px 26px 40px 0px rgba(133,124,141,1);
+}
+
+.title-font{
+    color: #4CF3FF;
 }

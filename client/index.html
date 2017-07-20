@@ -2,6 +2,7 @@
 <html ng-app="myApp">
   <head>
     <link rel="stylesheet" href="app/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Raleway" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
@@ -9,9 +10,22 @@
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.js"></script>
   </head>
   <body>
+    <!--Navbar  -->
+    <!--Navbar-->
+
+ 
+     <nav class="navbar fixed-top navbar-light bg-faded">
+      <span class="navbar-brand" href="#/">
+      <img src="https://risdhillon.github.io/chirpv6/images/Chirplogo.png" width="40" height="40" class="d-inline-block align-top" alt="">
+      </span>
+      <span class="navbar-text primary-text">Chirper</span>
+       <span class="nav-item navbar-text"> <a class="nav-link" href="#/list">Latest</a>
+       </span>
+    </nav>  
+    <!-- Chirp Widget   -->
     <div id="chirpWidget" data-ng-controller="PushController">
-      <button data-toggle="collapse" data-target="#chirpForm">Wanna Chirp About It?</button>
-      <div id="chirpForm" class="collapse in">
+      <button data-toggle="collapse" data-target="#chirpForm" class="btn btn-default">Wanna Chirp About It?</button>
+      <div id="chirpForm" class="collapse">
         <form>
           <div class="form-group">
             <label for="name-input">Name</label>
@@ -25,6 +39,7 @@
         </form>
       </div>
     </div>
+    <!--Angular Controllers load  -->
     <div ng-view></div>
     <a href="#/list">click me</a>
 
