@@ -4,8 +4,8 @@
         <h4>Check out the latest chirps!</h4>
     </div>
 
-    <div class = "col-xl-4" ng-controller="ChirpsController as chirps">
-        <div class = "center col-xl-4 list-container box-shadow" ng-repeat="chirp in chirpList">
+    <div class = "col-xl-3" ng-controller="ChirpsController as chirps">
+        <div class = "center col-xl-3 list-container box-shadow secondary-text" ng-repeat="chirp in chirpList">
             <div class = "inner-container">
                 <p>User: {{ chirp.user }}</p>
                 <p>Chirp: {{ chirp.message }}</p>

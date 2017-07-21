@@ -78,6 +78,7 @@ a {
 
 .center {
     margin: 0 auto;
+    text-align: center;
 }
 
 /*List Page  */
@@ -86,8 +87,8 @@ a {
 }
 
 .list-container {
-    border: 2px solid #acf7c1;
-    background-color: #acf7c1;
+    border: 2px solid #CC1378;
+    background-color: #CC1378;
     border-radius: 12px;
     margin-bottom: 10px;
     padding: 10px;
