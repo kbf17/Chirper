@@ -1,11 +1,11 @@
 <div id="list-page" class="secondary-text">
-    <div class = "center col-lg-4 title-font" id="list-heading">
+    <div class = "center col-xl-4 title-font" id="list-heading">
         <h1 class="primary-text">What the Chirp?!</h1>
         <h4>Check out the latest chirps!</h4>
     </div>
 
-    <div class = "col-lg-4" ng-controller="ChirpsController as chirps">
-        <div class = "center col-lg-4 list-container box-shadow" ng-repeat="chirp in chirpList">
+    <div class = "col-xl-4" ng-controller="ChirpsController as chirps">
+        <div class = "center col-xl-4 list-container box-shadow" ng-repeat="chirp in chirpList">
             <div class = "inner-container">
                 <p>User: {{ chirp.user }}</p>
                 <p>Chirp: {{ chirp.message }}</p>

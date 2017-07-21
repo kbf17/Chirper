@@ -3,9 +3,32 @@ body{
 }
 
 .navbar {
-    background-image: url('http://stockpictures.io/wp-content/uploads/2016/06/5695-birds-animals-flourish-swirls-swoosh-flowers-floral-decorative-ornamental-silhouette-svg-vector-free-vector-graphics-free-illustrations-free-images-royalty-free-768x389.png');
+    background-image: url('http://www.thevectorart.com/wp-content/uploads/2011/05/Abstract-Colorful-Background-Artwork.jpg');
     background-color: #9DF8FF;
+    background-size: inherit;
     font-size: 18px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 60px;
+} 
+
+li {
+    float: left;
+}
+img {
+    float: left;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+.move-down{
+    margin-bottom: -10px;
 }
 
 #chirpWidget {
@@ -13,6 +36,9 @@ body{
     width: 400px;
     text-align: right;
     float: right;
+    position: absolute;
+    margin-left: 700px;
+    margin-top: -70px;
 }
 
 #chirpForm {
@@ -30,6 +56,7 @@ body{
 }
 /*Home Page  */
 .landing{
+
     background-image: url("https://images5.alphacoders.com/308/308020.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -39,8 +66,7 @@ body{
     width: 100%;
 }
 .landing-text{
-    display: inline-flex;
-    float: right;
+    display: block;
     color: black;
     opacity: 1;
     
